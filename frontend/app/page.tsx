@@ -1,37 +1,35 @@
 import CourseCard from "@/components/CourseCard";
+import { getCourses } from "@/services/courseService";
 
-export default function Home() {
+export default async function Home() {
+
+  const courses = await getCourses();
+
   return (
     <main className="min-h-screen p-10">
-      <h1 className="text-5xl font-bold text-center text-slate-900">
+
+      <h1 className="text-5xl font-bold text-center">
         SS_Linktree
       </h1>
 
-      <p className="text-center text-lg text-slate-600 mt-4">
+      <p className="text-center mt-4 text-gray-600">
         Learn. Build. Get Hired.
       </p>
 
-      <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-6xl mx-auto">
-        <CourseCard
-          title="Data Analytics"
-          description="Excel, SQL, Power BI, Python"
-        />
+      <div className="grid md:grid-cols-2 gap-6 mt-10">
 
-        <CourseCard
-          title="DataBricks"
-          description="Spark, Delta Lake, ETL"
-        />
+        {courses.map((course: any) => (
+          <CourseCard
+            key={course.id}
+            title={course.title}
+            description={course.short_description}
+            duration={course.duration}
+            fees={course.fees}
+          />
+        ))}
 
-        <CourseCard
-          title="ServiceNow"
-          description="ITSM, CMDB, Workflow Automation"
-        />
-
-        <CourseCard
-          title="Full Stack Development"
-          description="React, Node.js, PostgreSQL"
-        />
       </div>
+
     </main>
   );
 }
