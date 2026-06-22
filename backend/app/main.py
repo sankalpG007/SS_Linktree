@@ -23,6 +23,7 @@ app.add_middleware(
 app.include_router(course_router)
 app.include_router(application_router)
 
+
 @app.get("/")
 def root():
     return {
