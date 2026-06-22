@@ -19,8 +19,9 @@ export default async function Home() {
       <div className="grid md:grid-cols-2 gap-6 mt-10">
 
         {courses.map((course: any) => (
-          <CourseCard
+        <CourseCard
             key={course.id}
+            id={course.id}
             title={course.title}
             description={course.short_description}
             duration={course.duration}

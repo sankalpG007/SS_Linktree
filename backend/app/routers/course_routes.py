@@ -19,3 +19,20 @@ def get_courses():
 
     finally:
         db.close()
+
+@router.get("/courses/{course_id}")
+def get_course(course_id: int):
+
+    db: Session = SessionLocal()
+
+    try:
+        course = (
+            db.query(Course)
+            .filter(Course.id == course_id)
+            .first()
+        )
+
+        return course
+
+    finally:
+        db.close()
