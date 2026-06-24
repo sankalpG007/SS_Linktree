@@ -58,7 +58,7 @@ export default function CourseHero({
           </Link>
 
           <a
-            href="https://wa.me/919999999999"
+            href="https://wa.me/919399345989"
             target="_blank"
             className="border px-8 py-4 rounded-xl"
           >
