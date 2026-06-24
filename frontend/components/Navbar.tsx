@@ -1,37 +1,45 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-lg bg-white/80 border-b">
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/logo.png"
+            alt="SS Infotech"
+            width={60}
+            height={60}
+          />
 
-        <div>
-          <h1 className="text-2xl font-bold text-blue-600">
-            SS_Linktree
-          </h1>
+          <div>
+            <h1 className="font-bold text-xl">
+              SS INFOTECH
+            </h1>
+
+            <p className="text-xs text-gray-500">
+              Learn. Build. Get Hired.
+            </p>
+          </div>
+        </Link>
+
+        <div className="hidden md:flex gap-8">
+          <Link href="/">Home</Link>
+          <Link href="/#courses">Courses</Link>
+          <Link href="/#about">About</Link>
+          <Link href="/#contact">Contact</Link>
         </div>
 
-        <div className="hidden md:flex gap-8 text-gray-600">
-
-          <a href="#">
-            Courses
-          </a>
-
-          <a href="#">
-            About
-          </a>
-
-          <a href="#">
-            Contact
-          </a>
-
-        </div>
-
-        <button className="bg-blue-600 text-white px-5 py-2 rounded-xl hover:bg-blue-700 transition">
-          Contact Us
-        </button>
+        <Link
+  href="/#courses"
+  className="bg-purple-600 text-white px-5 py-3 rounded-xl"
+>
+  Apply Now
+</Link>
 
       </div>
-
     </nav>
   );
 }

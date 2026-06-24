@@ -1,45 +1,66 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
-    <section className="py-24 px-6">
+    <section className="min-h-[80vh] flex items-center">
 
-      <div className="max-w-5xl mx-auto text-center">
+  <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
 
-        <div className="inline-block px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-medium mb-6">
+    <div>
 
-          🚀 Career Focused Learning
+      <span className="bg-purple-100 text-purple-700 px-4 py-2 rounded-full">
+        SS INFOTECH
+      </span>
 
-        </div>
+      <h1 className="text-7xl font-bold mt-8">
 
-        <h1 className="text-6xl md:text-7xl font-bold leading-tight">
+        IT Research &
+        Product Development
+        Firm
 
-          Learn.
-          <span className="text-blue-600">
-            Build.
-          </span>
+      </h1>
 
-          Get Hired.
+      <p className="text-xl text-gray-600 mt-8">
 
-        </h1>
+        Learn industry skills through
+        real-world projects and
+        job-focused training.
 
-        <p className="mt-8 text-xl text-gray-600 max-w-2xl mx-auto">
+      </p>
 
-          Industry-ready programs in Data Analytics,
-          DataBricks, ServiceNow and Full Stack Development.
+      <div className="flex gap-4 mt-10">
 
-        </p>
+        <button className="bg-purple-600 text-white px-8 py-4 rounded-xl">
+          <Link
+  href="/#courses"
+  className="bg-purple-600 text-white px-8 py-4 rounded-xl"
+>
+  Explore Courses
+</Link>
+        </button>
 
-        <div className="mt-10">
-
-          <button className="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg hover:bg-blue-700 transition">
-
-            Explore Courses
-
-          </button>
-
-        </div>
+        <Link
+  href="/#contact"
+  className="border px-8 py-4 rounded-xl"
+>
+  Contact Us
+</Link>
 
       </div>
 
-    </section>
+    </div>
+
+    <div className="flex justify-center items-center">
+
+      <img
+        src="/logo.png"
+        className="w-[450px]"
+      />
+
+    </div>
+
+  </div>
+
+</section>
   );
 }
