@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, IndianRupee } from "lucide-react";
 
 interface Props {
@@ -8,6 +9,13 @@ interface Props {
   duration: string;
   fees: string;
 }
+
+const courseImages: Record<string, string> = {
+  "Data Analytics": "/course-icons/data-analytics.png",
+  "DataBricks": "/course-icons/databricks.webp",
+  "ServiceNow": "/course-icons/servicenow.jpg",
+  "Full Stack Development": "/course-icons/fullstack.webp",
+};
 
 export default function CourseCard({
   id,
@@ -19,15 +27,17 @@ export default function CourseCard({
   return (
     <div className="bg-white rounded-3xl shadow-lg p-6 hover:-translate-y-2 transition">
 
-      <div className="text-5xl mb-5">
-        {title === "Data Analytics"
-          ? "📊"
-          : title === "DataBricks"
-          ? "🔥"
-          : title === "ServiceNow"
-          ? "⚙️"
-          : "💻"}
-      </div>
+      <div className="mb-5">
+
+  <Image
+    src={courseImages[title]}
+    alt={title}
+    width={70}
+    height={70}
+    className="rounded-xl object-contain"
+  />
+
+</div>
 
       <h2 className="text-2xl font-bold">
         {title}
@@ -50,6 +60,18 @@ export default function CourseCard({
         </div>
 
       </div>
+
+      <div className="mb-6 inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-purple-50 border border-purple-100 shadow-sm">
+
+  <Image
+    src={courseImages[title]}
+    alt={title}
+    width={50}
+    height={50}
+    className="object-contain"
+  />
+
+</div>
 
       <Link
         href={`/courses/${id}`}
